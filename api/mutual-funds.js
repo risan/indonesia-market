@@ -62,6 +62,8 @@ const validate = async (params) => {
     categories: yup.array(
       yup.string().trim().lowercase().oneOf(Object.keys(CATEGORIES))
     ).default([]),
+    fund_manager_id: yup.number().positive().integer(),
+    custodian_bank_id: yup.number().positive().integer(),
   });
 
   if (typeof params.categories === 'string') {
@@ -78,6 +80,8 @@ const validate = async (params) => {
     pageLength: data.per_page,
     sortField: data.sort_by,
     sortOrder: data.sort_direction.toUpperCase(),
+    imId: data.fund_manager_id,
+    cbId: data.custodian_bank_id,
   };
 
   if (data.type) {
