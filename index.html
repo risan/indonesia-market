@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Indonesia Market API</title>
+    <meta name="description" content="API to get Indonesia stock market and mutual fund data.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="API to get Indonesia stock market and mutual fund data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indonesia-market.vercel.app">
+    <meta property="og:image" content="https://indonesia-market.vercel.app/cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://indonesia-market.vercel.app/cover.png">
+    <meta name="twitter:title" content="Indonesia Market API">
+    <meta name="twitter:description" content="API to get Indonesia stock market and mutual fund data.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/wysiwyg.css@0.0.3/wysiwyg.css">
+    <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">📈</text></svg>'>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        table td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<main class="wysiwyg">
+    <h1>
+        <span role="img" aria-label="Chart Increasing">📈</span>
+        <span>Indonesia Market API</span>
+    </h1>
+    <p>
+        API to get Indonesia stock market and mutual fund data.
+    </p>
+
+    <h2>Stock Market</h2>
+
+    <h3>1. List of Stock</h3>
+    <pre><a href="/api/stocks">https://indonesia-market.vercel.app/api/stocks</a></pre>
+
+    <h4>Query Parameter</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><code>search</code></td>
+            <td>
+                Type: <code>string</code><br>
+                Search query
+            </td>
+        </tr>
+        <tr>
+            <td><code>page</code></td>
+            <td>
+                Type: <code>int</code> | Default: <code>1</code><br>
+                Page to retrieve
+            </td>
+        </tr>
+        <tr>
+            <td><code>per_page</code></td>
+            <td>
+                Type: <code>int</code> | Default: <code>25</code><br>
+                Number of records per page
+            </td>
+        </tr>
+        <tr>
+            <td><code>sort_by</code></td>
+            <td>
+                Type: <code>string</code> | Default: <code>Code</code><br>
+                Sort the results by the given field. Possible values:
+                <code>Code</code>,
+                <code>Name</code>,
+                <code>SectorName</code>,
+                <code>SubSectorName</code>,
+                <code>Last</code>,
+                <code>AdjustedClosingPrice</code>,
+                <code>PrevClosingPrice</code>,
+                <code>AdjustedOpenPrice</code>,
+                <code>AdjustedHighPrice</code>,
+                <code>AdjustedLowPrice</code>,
+                <code>Per</code>,
+                <code>Pbr</code>,
+                <code>Volume</code>,
+                <code>Value</code>,
+                <code>Frequency</code>,
+                <code>OneDay</code>,
+                <code>OneWeek</code>,
+                <code>OneMonth</code>,
+                <code>ThreeMonth</code>,
+                <code>SixMonth</code>,
+                <code>OneYear</code>,
+                <code>ThreeYear</code>,
+                <code>FiveYear</code>,
+                <code>TenYear</code>,
+                <code>Mtd</code>,
+                <code>Ytd</code>,
+                <code>Capitalization</code>,
+                <code>BetaOneYear</code>,
+                <code>StdevOneYear</code>,
+                <code>LastDate</code>,
+            </td>
+        </tr>
+        <tr>
+            <td><code>sort_direction</code></td>
+            <td>
+                Type: <code>string</code> | Default: <code>asc</code><br>
+                Sort direction: <code>asc</code> or <code>desc</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>index_id</code></td>
+            <td>
+                Type: <code>int</code> | Default:<br>
+                Filter stocks by the given stock index id.
+                Get all possible stock index ids from the <a href="#stocks-list-index">List Stock Index endpoint</a>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>sector_id</code></td>
+            <td>
+                Type: <code>int</code> | Default:<br>
+                Filter stocks by the given sector id.
+                Get all possible sector ids from the <a href="#stocks-list-sector">List Sector endpoint</a>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>subsector_id</code></td>
+            <td>
+                Type: <code>int</code> | Default:<br>
+                Filter stocks by the given subsector id.
+                Get all possible subsector ids from the <a href="#stocks-list-sector">List Sector endpoint</a>.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="stocks-list-index">2. List of Stock Index</h3>
+    <pre><a href="/api/stock-indices">https://indonesia-market.vercel.app/api/stock-indices</a></pre>
+
+    <h3>3. List of Sector</h3>
+    <pre><a href="/api/stock-sectors">https://indonesia-market.vercel.app/api/stock-sectors</a></pre>
+
+    <hr>
+
+    <h2>Mutual Funds</h2>
+
+    <h3>1. List of Mutual Fund</h3>
+    <pre><a href="/api/mutual-funds">https://indonesia-market.vercel.app/api/mutual-funds</a></pre>
+
+    <h4>Query Parameter</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><code>search</code></td>
+            <td>
+                Type: <code>string</code><br>
+                Search query
+            </td>
+        </tr>
+        <tr>
+            <td><code>page</code></td>
+            <td>
+                Type: <code>int</code> | Default: <code>1</code><br>
+                Page to retrieve
+            </td>
+        </tr>
+        <tr>
+            <td><code>per_page</code></td>
+            <td>
+                Type: <code>int</code> | Default: <code>25</code><br>
+                Number of records per page
+            </td>
+        </tr>
+        <tr>
+            <td><code>sort_by</code></td>
+            <td>
+                Type: <code>string</code> | Default: <code>Code</code><br>
+                Sort the results by the given field.<br>
+                Possible values:
+                <code>Name</code>,
+                <code>InvestmentManagerName</code>,
+                <code>CustodianBankName</code>,
+                <code>Type</code>,
+                <code>Currency</code>,
+                <code>Dividend</code>,
+                <code>NetAssetValue</code>,
+                <code>DailyReturn</code>,
+                <code>WeeklyReturn</code>,
+                <code>MonthlyReturn</code>,
+                <code>QuarterlyReturn</code>,
+                <code>SemiAnnualReturn</code>,
+                <code>YearlyReturn</code>,
+                <code>MtdReturn</code>,
+                <code>YtdReturn</code>,
+                <code>YearlyRating</code>,
+                <code>OneYearRating</code>,
+                <code>AssetUnderManagement</code>,
+                <code>TotalUnit</code>,
+                <code>AumLastUpdate</code>,
+                <code>LastFundFactSheet</code>,
+                <code>LastUpdatedPortfolio</code>,
+                <code>LastUpdate</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>sort_direction</code></td>
+            <td>
+                Type: <code>string</code> | Default: <code>asc</code><br>
+                Sort direction: <code>asc</code> or <code>desc</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>type</code></td>
+            <td>
+                Type: <code>string</code><br>
+                Filter mutual funds by the given type.<br>
+                Possible values:
+                <code>balanced</code>,
+                <code>equity</code>,
+                <code>fixed_income</code>,
+                <code>money_market</code>,
+                <code>protected</code>,
+                <code>limited_participation</code>,
+                <code>reits</code>,
+                <code>global</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>currency</code></td>
+            <td>
+                Type: <code>string</code><br>
+                Filter mutual funds by the given currency.<br>
+                Possible values:
+                <code>idr</code> or <code>usd</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>categories</code></td>
+            <td>
+                Type: <code>string</code><br>
+                Filter mutual funds by the given categories.<br>
+                Comma separated value from the following options:
+                <code>sharia</code>,
+                <code>etf</code>,
+                <code>index</code>,
+                <code>conventional</code>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="mutual-funds-list-fund-manager">2. List of Fund Manager</h3>
+    <pre><a href="/api/mutual-fund-managers">https://indonesia-market.vercel.app/api/mutual-fund-managers</a></pre>
+
+    <h3 id="mutual-funds-list-custodian-bank">3. List of Custodian Bank</h3>
+    <pre><a href="/api/mutual-fund-custodian-banks">https://indonesia-market.vercel.app/api/mutual-fund-custodian-banks</a></pre>
+
+    <p>
+        By <a href="https://risanb.com">Risan Bagja</a> | <a href="https://github.com/risan/indonesia-market">Source Code</a>
+    </p>
+</main>
+</body>
+</html>
