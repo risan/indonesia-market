@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 
     const data = response.data.map(item => ({
       ...item,
-      stocks_url: `https://indonesia-market.vercel.app/api/mututal-funds?custodian_bank_id=${item.Id}`,
+      stocks_url: `https://indonesia-market.vercel.app/api/mutual-funds?custodian_bank_id=${item.Id}`,
     }));
 
     return res.json({ data });
